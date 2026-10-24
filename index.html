@@ -14,8 +14,48 @@
 <div class="shell"><header class="site-header"><div class="brand">EL<span>BTI</span><span style="font-size:12px;letter-spacing:0;color:#9885ae;margin-left:8px">FAN TEST</span></div><div class="head-pill">UNOFFICIAL FAN PROJECT ♡</div></header>
 <section class="hero" id="hero"><div class="eyebrow">FIND YOUR FAVORITE MOMENT <span class="sparkle">✦</span></div><h1>당신의 <em>엘BTI</em>는?</h1><p>좋아하는 스타일부터 춤, 노래 그리고 콘텐츠까지.<br>네 번의 선택으로 완성하는 나만의 팬 취향 기록.</p><button class="primary start" id="startBtn">나의 엘BTI 찾기 &nbsp; →</button></section>
 <main><section class="panel is-hidden" id="quiz" aria-live="polite"><div class="progress-top"><span>MY FAVORITE PICKS</span><strong id="stepCounter">01 / 04</strong></div><div class="progress"><div class="progress-inner" id="progress"></div></div><div class="section-kicker" id="kicker">QUESTION 01</div><h2 class="question-title" id="questionTitle"></h2><p class="question-desc" id="questionDesc"></p><div class="choice-grid" id="choices"></div><div class="nav"><button class="secondary" id="backBtn">← 이전</button><span class="hint" id="selectHint">하나를 선택해 주세요</span><button class="primary" id="nextBtn" disabled>다음 →</button></div></section>
-<section class="panel result-panel is-hidden" id="result"><div class="result-badge">MY ELBTI RESULT ✦</div><h2 class="result-heading">당신의 엘BTI는</h2><div class="result-code" id="resultCode"></div><p class="result-desc" id="resultDesc"></p><div class="result-lines" id="resultLines"></div><p class="privacy" id="voteStatus" aria-live="polite"></p><div class="result-actions"><button class="primary" id="downloadBtn">↓ 결과 카드 PNG 저장</button><button class="secondary" id="restartBtn">↻ 다시 선택하기</button></div><div class="privacy">사진·이름은 수집하지 않습니다. 선택한 항목의 번호만 익명으로 집계하며, 응답은 브라우저에 자동 저장하지 않습니다.<br>인기 순위는 익명 선택 결과를 항목별 비율로만 표시합니다.</div></section>
-<section class="stats-wrap" id="stats"><div class="stats-top"><div><div class="eyebrow">FANDOM FAVORITES</div><h2>모두의 취향은? ✳</h2></div><span class="stats-notice">인기 TOP 3 · 득표수 비공개</span></div><div class="stats-grid" id="statsGrid"></div></section></main><footer class="footer">Made with ♡ for fans · 비공식 팬메이드 프로젝트 · 바이브 코딩으로 제작되었습니다</footer></div>
+<section class="panel result-panel is-hidden" id="result"><div class="result-badge">MY ELBTI RESULT ✦</div><h2 class="res
+CREATE OR REPLACE FUNCTION public.submit_elbti_vote(p_choices jsonb)
+RETURNS boolean
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path TO 'public'
+AS $function$
+DECLARE
+  i integer;
+  idx integer;
+  max_choices integer[] := array[5,47,14,5];
+BEGIN
+  IF jsonb_typeof(p_choices) IS DISTINCT FROM 'array'
+     OR jsonb_array_length(p_choices) <> 4 THEN
+    RAISE EXCEPTION 'Expected exactly four choices';
+  END IF;
+
+  FOR i IN 0..3 LOOP
+    IF jsonb_typeof(p_choices->i) <> 'number'
+       OR (p_choices->>i) !~ '^[0-9]+$' THEN
+      RAISE EXCEPTION 'Invalid choice';
+    END IF;
+
+    idx := (p_choices->>i)::integer;
+    IF idx < 0 OR idx >= max_choices[i+1] THEN
+      RAISE EXCEPTION 'Choice out of bounds';
+    END IF;
+  END LOOP;
+
+  FOR i IN 0..3 LOOP
+    idx := (p_choices->>i)::integer;
+    INSERT INTO public.elbti_vote_counts(category, option_index, votes)
+    VALUES (i, idx, 1)
+    ON CONFLICT (category, option_index)
+    DO UPDATE SET votes = public.elbti_vote_counts.votes + 1;
+  END LOOP;
+
+  RETURN true;
+END;
+$function$;
+  ult-heading">당신의 엘BTI는</h2><div class="result-code" id="resultCode"></div><p class="result-desc" id="resultDesc"></p><div class="result-lines" id="resultLines"></div><p class="privacy" id="voteStatus" aria-live="polite"></p><div class="result-actions"><button class="primary" id="downloadBtn">↓ 결과 카드 PNG 저장</button><button class="secondary" id="restartBtn">↻ 다시 선택하기</button></div><div class="privacy">사진·이름은 수집하지 않습니다. 선택한 항목의 번호만 익명으로 집계하며, 응답은 브라우저에 자동 저장하지 않습니다.<br>인기 순위는 익명 선택 결과를 항목별 비율로만 표시합니다.</div></section>
+<section class="stats-wrap" id="stats"><div class="stats-top"><div><div class="eyebrow">FANDOM FAVORITES</div><h2>보챠들의 취향은? ✳</h2></div><span class="stats-notice">인기 TOP 3 · 득표수 비공개</span></div><div class="stats-grid" id="statsGrid"></div></section></main><footer class="footer">Made with ♡ for fans · 비공식 팬메이드 프로젝트 · 바이브 코딩으로 제작되었습니다</footer></div>
 <script>
 'use strict';
 
