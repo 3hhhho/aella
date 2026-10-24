@@ -32,14 +32,14 @@ function resultTitle(){return `${questions[0].items[answers[0]].title}와 ${ques
 function showResult(){ $('quiz').classList.add('is-hidden');$('result').classList.remove('is-hidden');$('resultCode').textContent=resultCode();$('resultDesc').textContent=resultTitle()+'!\n당신이 고른 네 가지 최애 순간이 모여 만들어진 특별한 취향이에요.';$('resultLines').replaceChildren();questions.forEach((q,i)=>{const row=document.createElement('div');row.className='result-line';const label=document.createElement('span');label.textContent=['옷 / 머리','댄스 쇼츠','커버곡','콘텐츠'][i];const val=document.createElement('strong');val.textContent=q.items[answers[i]].title;row.append(label,val);$('resultLines').append(row);});submitVote();window.scrollTo({top:$('result').getBoundingClientRect().top+window.scrollY-25,behavior:'smooth'});}
 $('startBtn').addEventListener('click',showQuiz);$('backBtn').addEventListener('click',()=>{if(step===0){reset();return;}step--;renderStep();});$('nextBtn').addEventListener('click',()=>{if(answers[step]===null)return;if(step===3){showResult();return;}step++;renderStep();});$('restartBtn').addEventListener('click',reset);
 
-const SUPABASE_URL = 'https://cslzntzgremjqgwtjrgf.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://cslzntzgremjqgwtjrgf.supabase.co';
 const SUPABASE_PUBLIC_KEY = 'sb_publishable_MiQxlGiewwe3ur0adds6Ew_s7jWJA1k';
 const statsConfigured = SUPABASE_URL.startsWith('https://') && !SUPABASE_PUBLIC_KEY.startsWith('YOUR_');
 const categories = ['옷 / 머리','댄스 쇼츠','커버곡','콘텐츠'];
 function statMessage(text){const area=$('statsGrid');area.replaceChildren();questions.forEach((q,i)=>{const card=document.createElement('section');card.className='stat-card';const heading=document.createElement('h3');heading.textContent=`0${i+1}  ${categories[i]} 인기 순위`;const msg=document.createElement('p');msg.className='stats-empty';msg.textContent=text;card.append(heading,msg);area.append(card);});}
 async function callStatsRpc(name,body){
  const endpoint=`${SUPABASE_URL.replace(/\/$/,'')}/rest/v1/rpc/${name}`;
- const resp=await fetch(endpoint,{method:'POST',headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`,'Content-Type':'application/json'},body:JSON.stringify(body||{})});
+ const resp=await fetch(endpoint,{method:'POST',headers:{apikey:SUPABASE_PUBLIC_KEY,'Content-Type':'application/json'},body:JSON.stringify(body||{})});
  if(!resp.ok)throw new Error(`통계 서버 오류 (${resp.status})`);
  return resp.status===204?null:resp.json();
 }
