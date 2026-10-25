@@ -8,54 +8,23 @@
 <style>
 :root{--ink:#25233a;--muted:#79768e;--paper:#fffcfd;--lav:#eee6ff;--violet:#7457cb;--line:#e9e3f0;--pink:#f9e2ec;--shadow:0 16px 50px #48316c13}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 8% 0,#f8e8fc 0,transparent 35%),radial-gradient(ellipse at 94% 16%,#e6e8ff 0,transparent 35%),#faf8fc;color:var(--ink);font-family:'Gowun Dodum',sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #a894ed;outline-offset:3px}.shell{max-width:1080px;margin:auto;padding:0 24px}.site-header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e9e1ec99}.brand{font:800 27px Outfit,sans-serif;letter-spacing:-1.5px}.brand span{color:var(--violet)}.head-pill{font-size:12px;letter-spacing:.08em;border:1px solid var(--line);background:#fff9;border-radius:999px;padding:9px 15px;color:#746985}.hero{text-align:center;padding:75px 0 51px}.eyebrow{font:700 12px Outfit,sans-serif;letter-spacing:.28em;color:var(--violet)}h1{font-size:clamp(38px,6.5vw,66px);letter-spacing:-3px;line-height:1.2;margin:17px 0}h1 em{font-style:normal;color:var(--violet)}.hero p{line-height:1.85;color:var(--muted);font-size:16px}.sparkle{display:inline-block;transform:rotate(-10deg);color:#c188ce}.primary{border:0;border-radius:16px;background:var(--violet);color:white;font-weight:700;padding:15px 27px;box-shadow:0 8px 20px #7557c63b;transition:transform .2s,background .2s}.primary:hover{transform:translateY(-2px);background:#6247b2}.secondary{background:white;border:1px solid #ded5e9;color:var(--ink);padding:14px 22px;border-radius:16px;font-weight:700}.start{margin-top:22px}.panel{max-width:885px;background:#fff;border:1px solid #eee7f0;box-shadow:var(--shadow);border-radius:27px;margin:0 auto;padding:38px 43px}.progress-top{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.progress-top strong{color:var(--violet);font-family:Outfit,sans-serif}.progress{height:7px;background:#f2edf7;border-radius:12px;overflow:hidden;margin:15px 0 37px}.progress-inner{height:100%;width:25%;background:linear-gradient(90deg,#ad8fe4,var(--violet));transition:width .25s}.section-kicker{color:var(--violet);font:800 12px Outfit;letter-spacing:.12em;margin:0 0 9px}.question-title{font-size:clamp(23px,4vw,31px);letter-spacing:-1.1px;margin:0}.question-desc{color:var(--muted);font-size:14px;line-height:1.8;margin:8px 0 26px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.option{padding:0;text-align:left;background:#fff;border:2px solid #efebf2;border-radius:18px;overflow:hidden;transition:border .2s,transform .2s,box-shadow .2s;position:relative}.option:hover{transform:translateY(-2px);box-shadow:0 10px 24px #49337915}.option.active{border-color:var(--violet);box-shadow:0 0 0 3px #e8dfff}.option .picture{aspect-ratio:1.65;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.picture .silhouette{width:106px;height:124px;position:absolute;bottom:-13px;border-radius:57px 57px 14px 14px;background:var(--shirt);filter:drop-shadow(0 9px 6px #6d517222)}.silhouette:before{content:'';position:absolute;width:58px;height:69px;border-radius:48% 48% 45% 45%;left:24px;top:-45px;background:#f2caba;z-index:2}.silhouette:after{content:'';position:absolute;width:74px;height:53px;border-radius:53% 48% 15% 10%;left:16px;top:-53px;background:var(--hair);z-index:3;clip-path:polygon(0 0,100% 0,100% 80%,70% 62%,43% 93%,0 72%)}.picture:after{content:'✦';position:absolute;right:22px;top:15px;font-size:35px;color:#ffffff99}.picture-label{position:absolute;left:16px;top:15px;font:700 11px Outfit;letter-spacing:.13em;color:#463b59bb}.option-info{padding:18px 18px 19px;display:flex;align-items:center;justify-content:space-between;gap:8px}.option-info strong{font-size:17px}.option-info small{font-size:12px;color:var(--muted);display:block;margin-top:4px}.radio{width:23px;height:23px;border-radius:100%;border:2px solid #dad1e2;flex:none;display:grid;place-items:center;color:white;font:800 13px Outfit}.option.active .radio{background:var(--violet);border-color:var(--violet)}.media-option{display:flex;align-items:center;gap:15px;padding:15px;min-height:95px}.media-symbol{height:60px;width:69px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:27px;background:var(--tile)}.media-copy{flex:1}.media-copy strong{font-size:15px}.media-copy small{display:block;margin-top:6px;font-size:12px;color:var(--muted)}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:32px}.hint{color:var(--muted);font-size:12px}.result-panel{text-align:center}.result-badge{font:800 12px Outfit;letter-spacing:.18em;color:var(--violet)}.result-heading{font-size:32px;letter-spacing:-1px;margin:10px 0 7px}.result-code{font:800 clamp(30px,7vw,53px) Outfit;color:var(--violet);letter-spacing:.08em;margin:10px 0}.result-desc{line-height:1.85;color:var(--muted);font-size:14px}.result-lines{text-align:left;margin:28px auto 23px;max-width:530px;background:#faf7ff;padding:18px 21px;border-radius:17px;display:grid;gap:12px}.result-line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed #ddd2e8;padding-bottom:9px}.result-line:last-child{border:0;padding:0}.result-line span{color:var(--muted)}.result-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.privacy{font-size:12px;color:#8b8497;line-height:1.8;margin-top:17px}.stats-wrap{max-width:885px;margin:63px auto 95px}.stats-top{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:20px}.stats-top h2{font-size:28px;letter-spacing:-1px;margin:7px 0}.stats-notice{color:#867d92;font-size:12px;background:#f0eaf4;border-radius:999px;padding:9px 12px}.stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.stat-card{background:white;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 8px 27px #51336f0a}.stat-card h3{font-size:17px;margin:0 0 19px}.stat-row{display:grid;grid-template-columns:minmax(0,1fr) 60px;gap:6px 10px;margin-bottom:16px;font-size:13px}.stat-row:last-child{margin-bottom:0}.stat-row .percent{text-align:right;color:var(--violet);font:700 13px Outfit}.bar{height:7px;background:#f2edf6;grid-column:1 / -1;border-radius:10px;overflow:hidden}.bar>i{display:block;height:100%;background:linear-gradient(90deg,#c5a9ee,#8162d0);border-radius:9px}.stat-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.footer{text-align:center;padding:22px 0 45px;color:#978d9f;font-size:12px;border-top:1px solid #eae4ed}.is-hidden{display:none!important}@media(max-width:630px){.shell{padding:0 15px}.site-header{height:70px}.hero{padding:51px 0 36px}h1{letter-spacing:-2px}.panel{padding:24px 18px;border-radius:19px}.choice-grid{gap:10px}.option-info{padding:12px}.option-info strong{font-size:14px}.option-info small{font-size:11px}.picture .silhouette{transform:scale(.85);transform-origin:bottom}.picture-label{font-size:9px}.stats-grid{grid-template-columns:1fr}.stats-top{align-items:start;flex-direction:column}.nav{margin-top:24px}.primary,.secondary{padding:13px 16px}.hero p{font-size:14px}}
 .choice-search{width:100%;margin:-5px 0 21px;padding:15px 18px;border:1px solid #ddd4e9;border-radius:14px;background:#faf8ff;color:#332745}.option{display:flex;flex-direction:column}.option-pick{display:block;width:100%;border:0;background:none;padding:0;text-align:left;color:inherit;flex:1}.real-picture{height:177px;background:#f3eefa;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#9387a5;font-size:12px}.real-picture img{width:100%;height:100%;object-fit:contain}.watch-link{display:block;text-align:center;color:#7457cb;text-decoration:none;font-weight:700;font-size:12px;padding:10px 12px 14px;border-top:1px solid #f1eaf6}.watch-link:hover{text-decoration:underline}.stats-empty{color:#82758e;line-height:1.8;font-size:13px}.option-pick .media-symbol{margin:20px auto 3px}@media(max-width:630px){.real-picture{height:145px}.watch-link{font-size:11px;padding:9px 4px}.option-info{min-height:75px}}.stat-rank{display:flex;align-items:center;gap:9px}.stat-rank .rank{font:800 12px Outfit,sans-serif;color:#8566bd;min-width:18px}.stat-row .bar{grid-column:1 / -1}.stat-row .stat-name{font-size:13px}.stats-intro{font-size:12px;color:#8c8299;line-height:1.7;margin:5px 0 14px}.stat-bar-fill{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#bc9eea,#8062ce)}
+
+/* Statistics layout: TOP 3 groups on left, Shorts TOP 10 on right */
+.stats-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px;align-items:start}
+.stats-left{display:grid;gap:16px;min-width:0}
+.stats-right{min-width:0}
+.stat-video-link{color:inherit;text-decoration:none;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stat-video-link:hover{color:var(--violet);text-decoration:underline}
+.stat-video-link:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:3px}
+@media(max-width:700px){.stats-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 <div class="shell"><header class="site-header"><div class="brand">EL<span>BTI</span><span style="font-size:12px;letter-spacing:0;color:#9885ae;margin-left:8px">FAN TEST</span></div><div class="head-pill">UNOFFICIAL FAN PROJECT ♡</div></header>
 <section class="hero" id="hero"><div class="eyebrow">FIND YOUR FAVORITE MOMENT <span class="sparkle">✦</span></div><h1>당신의 <em>엘BTI</em>는?</h1><p>좋아하는 스타일부터 춤, 노래 그리고 콘텐츠까지.<br>네 번의 선택으로 완성하는 나만의 팬 취향 기록.</p><button class="primary start" id="startBtn">나의 엘BTI 찾기 &nbsp; →</button></section>
 <main><section class="panel is-hidden" id="quiz" aria-live="polite"><div class="progress-top"><span>MY FAVORITE PICKS</span><strong id="stepCounter">01 / 04</strong></div><div class="progress"><div class="progress-inner" id="progress"></div></div><div class="section-kicker" id="kicker">QUESTION 01</div><h2 class="question-title" id="questionTitle"></h2><p class="question-desc" id="questionDesc"></p><div class="choice-grid" id="choices"></div><div class="nav"><button class="secondary" id="backBtn">← 이전</button><span class="hint" id="selectHint">하나를 선택해 주세요</span><button class="primary" id="nextBtn" disabled>다음 →</button></div></section>
-<section class="panel result-panel is-hidden" id="result"><div class="result-badge">MY ELBTI RESULT ✦</div><h2 class="res
-CREATE OR REPLACE FUNCTION public.submit_elbti_vote(p_choices jsonb)
-RETURNS boolean
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path TO 'public'
-AS $function$
-DECLARE
-  i integer;
-  idx integer;
-  max_choices integer[] := array[5,47,14,5];
-BEGIN
-  IF jsonb_typeof(p_choices) IS DISTINCT FROM 'array'
-     OR jsonb_array_length(p_choices) <> 4 THEN
-    RAISE EXCEPTION 'Expected exactly four choices';
-  END IF;
-
-  FOR i IN 0..3 LOOP
-    IF jsonb_typeof(p_choices->i) <> 'number'
-       OR (p_choices->>i) !~ '^[0-9]+$' THEN
-      RAISE EXCEPTION 'Invalid choice';
-    END IF;
-
-    idx := (p_choices->>i)::integer;
-    IF idx < 0 OR idx >= max_choices[i+1] THEN
-      RAISE EXCEPTION 'Choice out of bounds';
-    END IF;
-  END LOOP;
-
-  FOR i IN 0..3 LOOP
-    idx := (p_choices->>i)::integer;
-    INSERT INTO public.elbti_vote_counts(category, option_index, votes)
-    VALUES (i, idx, 1)
-    ON CONFLICT (category, option_index)
-    DO UPDATE SET votes = public.elbti_vote_counts.votes + 1;
-  END LOOP;
-
-  RETURN true;
-END;
-$function$;
-  ult-heading">당신의 엘BTI는</h2><div class="result-code" id="resultCode"></div><p class="result-desc" id="resultDesc"></p><div class="result-lines" id="resultLines"></div><p class="privacy" id="voteStatus" aria-live="polite"></p><div class="result-actions"><button class="primary" id="downloadBtn">↓ 결과 카드 PNG 저장</button><button class="secondary" id="restartBtn">↻ 다시 선택하기</button></div><div class="privacy">사진·이름은 수집하지 않습니다. 선택한 항목의 번호만 익명으로 집계하며, 응답은 브라우저에 자동 저장하지 않습니다.<br>인기 순위는 익명 선택 결과를 항목별 비율로만 표시합니다.</div></section>
-<section class="stats-wrap" id="stats"><div class="stats-top"><div><div class="eyebrow">FANDOM FAVORITES</div><h2>보챠들의 취향은? ✳</h2></div><span class="stats-notice">인기 TOP 3 · 득표수 비공개</span></div><div class="stats-grid" id="statsGrid"></div></section></main><footer class="footer">Made with ♡ for fans · 비공식 팬메이드 프로젝트 · 바이브 코딩으로 제작되었습니다</footer></div>
+<section class="panel result-panel is-hidden" id="result"><div class="result-badge">MY ELBTI RESULT ✦</div><h2 class="result-heading">당신의 엘BTI는</h2><div class="result-code" id="resultCode"></div><p class="result-desc" id="resultDesc"></p><div class="result-lines" id="resultLines"></div><p class="privacy" id="voteStatus" aria-live="polite"></p><div class="result-actions"><button class="primary" id="downloadBtn">↓ 결과 카드 PNG 저장</button><button class="secondary" id="restartBtn">↻ 다시 선택하기</button></div><div class="privacy">사진·이름은 수집하지 않습니다. 선택한 항목의 번호만 익명으로 집계하며, 응답은 브라우저에 자동 저장하지 않습니다.<br>인기 순위는 익명 선택 결과를 항목별 비율로만 표시합니다.</div></section>
+<section class="stats-wrap" id="stats"><div class="stats-top"><div><div class="eyebrow">FANDOM FAVORITES</div><h2>보챠들의 취향은? ✳</h2></div><span class="stats-notice">쇼츠 TOP 10 · 기타 TOP 3 · 득표수 비공개</span></div><div class="stats-grid" id="statsGrid"></div></section></main><footer class="footer">Made with ♡ for fans · 비공식 팬메이드 프로젝트</footer></div>
 <script>
 'use strict';
 
@@ -84,31 +53,77 @@ async function callStatsRpc(name,body){
  return resp.status===204?null:resp.json();
 }
 function renderRankings(rows){
- const area=$('statsGrid');area.replaceChildren();
- questions.forEach((q,i)=>{
-  const card=document.createElement('section');card.className='stat-card';
-  const heading=document.createElement('h3');heading.textContent=`0${i+1}  ${categories[i]} TOP 3`;
-  const entries=rows.filter(r=>Number(r.category)===i).sort((a,b)=>Number(a.rank)-Number(b.rank)).slice(0,3);
+ const area=$('statsGrid');
+ area.replaceChildren();
+ const left=document.createElement('div');
+ left.className='stats-left';
+ const right=document.createElement('div');
+ right.className='stats-right';
+
+ function makeCard(categoryIndex){
+  const q=questions[categoryIndex];
+  const limit=categoryIndex===1?10:3;
+  const card=document.createElement('section');
+  card.className='stat-card';
+  const heading=document.createElement('h3');
+  heading.textContent=`0${categoryIndex+1} ${categories[categoryIndex]} TOP ${limit}`;
   card.append(heading);
-  if(entries.length===0){const empty=document.createElement('p');empty.className='stats-empty';empty.textContent='아직 선택 결과가 없어요.';card.append(empty);}
+  const entries=rows.filter(r=>Number(r.category)===categoryIndex)
+   .sort((a,b)=>Number(a.rank)-Number(b.rank)).slice(0,limit);
+  if(entries.length===0){
+   const empty=document.createElement('p');
+   empty.className='stats-empty';
+   empty.textContent='아직 선택 결과가 없어요.';
+   card.append(empty);
+  }
   entries.forEach((r,j)=>{
-   const choice=q.items[Number(r.option_index)];if(!choice)return;
+   const choice=q.items[Number(r.option_index)];
+   if(!choice)return;
    const percent=Math.max(0,Math.min(100,Number(r.percentage)||0));
-   const row=document.createElement('div');row.className='stat-row';
-   const title=document.createElement('div');title.className='stat-rank';
-   const rank=document.createElement('span');rank.className='rank';rank.textContent=String(j+1).padStart(2,'0');
-   const name=document.createElement('span');name.className='stat-name';name.textContent=choice.title;
-   title.append(rank,name);
-   const pct=document.createElement('span');pct.className='percent';pct.textContent=`${percent.toFixed(1)}%`;
-   const track=document.createElement('div');track.className='bar';
-   const fill=document.createElement('i');fill.className='stat-bar-fill';fill.style.width=`${percent}%`;track.append(fill);
-   row.append(title,pct,track);card.append(row);
-  });area.append(card);
- });
+   const row=document.createElement('div');
+   row.className='stat-row';
+   const title=document.createElement('div');
+   title.className='stat-rank';
+   const rank=document.createElement('span');
+   rank.className='rank';
+   rank.textContent=String(j+1).padStart(2,'0');
+   const name=document.createElement('span');
+   name.className='stat-name';
+   name.textContent=choice.title;
+   if(categoryIndex===1&&choice.url){
+    const link=document.createElement('a');
+    link.href=choice.url;
+    link.target='_blank';
+    link.rel='noopener noreferrer';
+    link.className='stat-video-link';
+    link.title='유튜브에서 영상 보기';
+    link.append(name);
+    title.append(rank,link);
+   }else{
+    title.append(rank,name);
+   }
+   const pct=document.createElement('span');
+   pct.className='percent';
+   pct.textContent=`${percent.toFixed(1)}%`;
+   const track=document.createElement('div');
+   track.className='bar';
+   const fill=document.createElement('i');
+   fill.className='stat-bar-fill';
+   fill.style.width=`${percent}%`;
+   track.append(fill);
+   row.append(title,pct,track);
+   card.append(row);
+  });
+  return card;
+ }
+ [0,2,3].forEach(i=>left.append(makeCard(i)));
+ right.append(makeCard(1));
+ area.append(left,right);
 }
+
 async function loadStats(){
  if(!statsConfigured){statMessage('현재 통계 서버 연결 전입니다. 설정 후 실제 비율만 표시됩니다.');return;}
- try{const rows=await callStatsRpc('get_elbti_stats',{});renderRankings(Array.isArray(rows)?rows:[]);}
+ try{const rows=await callStatsRpc('get_elbti_stats_extended',{});renderRankings(Array.isArray(rows)?rows:[]);}
  catch(err){console.error(err);statMessage('통계를 불러올 수 없습니다. 잠시 후 다시 확인해 주세요.');}
 }
 let voteSubmitting=false;
